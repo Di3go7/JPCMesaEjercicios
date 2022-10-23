@@ -1,3 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/misc.xml
+/gradle.xml
+/vcs.xml
+/~$vcs.xml
+/inspectionProfiles/Project_Default.xml
