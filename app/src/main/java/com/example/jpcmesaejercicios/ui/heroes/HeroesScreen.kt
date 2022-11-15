@@ -30,7 +30,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
-fun HeroesScreen(onHeroClick: () -> Unit) {
+fun HeroesScreen(onHeroClick: (Int) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -52,14 +52,14 @@ fun HeroesScreen(onHeroClick: () -> Unit) {
         }
     ) { padding ->
         HeroesList (
-            navToDetail = onHeroClick
+            onHeroClick = onHeroClick
         )
         padding
     }
 }
 
 @Composable
-fun HeroesList(viewModel: HeroesViewModel = viewModel(), navToDetail: () -> Unit) {
+fun HeroesList(viewModel: HeroesViewModel = viewModel(), onHeroClick: (Int) -> Unit) {
     val state by viewModel.state.collectAsState()
 
     if (state.heroes.isNotEmpty()) {
@@ -69,7 +69,7 @@ fun HeroesList(viewModel: HeroesViewModel = viewModel(), navToDetail: () -> Unit
                     Modifier
                         .height(intrinsicSize = IntrinsicSize.Max)
                         .fillMaxWidth().clickable {
-                            navToDetail()
+                            onHeroClick(heroe.id)
                         }
                 ) {
                     Column {

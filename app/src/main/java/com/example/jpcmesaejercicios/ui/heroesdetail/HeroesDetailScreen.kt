@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 
 @Composable
-fun HeroesDetailScreen() {
+fun HeroesDetailScreen(heroeId: Int) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -27,7 +27,7 @@ fun HeroesDetailScreen() {
                             modifier = Modifier.fillMaxWidth(),
                             textAlign = TextAlign.Center,
                             maxLines = 1,
-                            text = "Detalle"
+                            text = "Detalle $heroeId"
                         )
                     }
                 }
