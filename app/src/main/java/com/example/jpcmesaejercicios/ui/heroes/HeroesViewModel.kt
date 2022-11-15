@@ -2,7 +2,7 @@ package com.example.jpcmesaejercicios.ui.heroes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.jpcmesaejercicios.entities.Heroe
+import com.example.jpcmesaejercicios.entities.Hero
 import com.example.jpcmesaejercicios.respositories.HeroesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -22,6 +22,6 @@ class HeroesViewModel : ViewModel() {
 
     data class UIState(
         val loader: Boolean = false,
-        val heroes: List<Heroe> = emptyList()
+        val heroes: List<Hero> = emptyList()
     )
 }

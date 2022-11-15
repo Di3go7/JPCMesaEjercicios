@@ -8,7 +8,6 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.jpcmesaejercicios.navigation.Navigation
-import com.example.jpcmesaejercicios.ui.heroes.HeroesScreen
 import com.example.jpcmesaejercicios.ui.heroesdetail.HeroesDetailScreen
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +16,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             Navigation(navHostController = navController)
-            HeroesScreen(navController)
         }
     }
 }

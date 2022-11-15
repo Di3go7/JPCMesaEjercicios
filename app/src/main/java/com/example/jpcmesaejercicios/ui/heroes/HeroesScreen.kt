@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -25,18 +24,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
-import kotlinx.coroutines.selects.select
 
 @Composable
-fun HeroesScreen(navController: NavHostController) {
-/*    Scaffold(
+fun HeroesScreen(onHeroClick: () -> Unit) {
+    Scaffold(
         topBar = {
             TopAppBar(
                 title = {
@@ -55,16 +50,16 @@ fun HeroesScreen(navController: NavHostController) {
                 }
             )
         }
-    ) { padding ->*/
+    ) { padding ->
         HeroesList (
-            navController = navController
+            navToDetail = onHeroClick
         )
-/*        padding
-    }*/
+        padding
+    }
 }
 
 @Composable
-fun HeroesList(viewModel: HeroesViewModel = viewModel(), navController: NavHostController) {
+fun HeroesList(viewModel: HeroesViewModel = viewModel(), navToDetail: () -> Unit) {
     val state by viewModel.state.collectAsState()
 
     if (state.heroes.isNotEmpty()) {
@@ -74,7 +69,7 @@ fun HeroesList(viewModel: HeroesViewModel = viewModel(), navController: NavHostC
                     Modifier
                         .height(intrinsicSize = IntrinsicSize.Max)
                         .fillMaxWidth().clickable {
-                            navController.navigate("detail")
+                            navToDetail()
                         }
                 ) {
                     Column {
@@ -101,5 +96,4 @@ fun HeroesList(viewModel: HeroesViewModel = viewModel(), navController: NavHostC
             }
         }
     }
-
 }

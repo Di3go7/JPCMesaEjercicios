@@ -1,6 +1,7 @@
 package com.example.jpcmesaejercicios.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,10 +15,23 @@ fun Navigation(navHostController: NavHostController) {
         startDestination = "main"
     ) {
         composable("main") {
-            HeroesScreen(navHostController)
+            HeroesScreen(
+                onHeroClick = {
+                    navToHeroesDetailScreen(navHostController)
+                }
+            )
         }
-        composable("detail"){
+        composable("detail") {
             HeroesDetailScreen()
         }
     }
 }
+
+fun navToHeroesDetailScreen(navController: NavController) {
+    navController.navigate("detail")
+}
+
+/*
+fun navToHeroesScreen(navController: NavController) {
+    navController.navigate("main")
+}*/

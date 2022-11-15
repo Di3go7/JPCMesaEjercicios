@@ -1,16 +1,16 @@
 package com.example.jpcmesaejercicios.respositories
 
-import com.example.jpcmesaejercicios.entities.Heroe
-import com.example.jpcmesaejercicios.entities.HeroeBiography
-import com.example.jpcmesaejercicios.entities.HeroeImages
-import com.example.jpcmesaejercicios.entities.HeroePowerStats
+import com.example.jpcmesaejercicios.entities.Hero
+import com.example.jpcmesaejercicios.entities.HeroBiography
+import com.example.jpcmesaejercicios.entities.HeroImages
+import com.example.jpcmesaejercicios.entities.HeroPowerStats
 
 object HeroesRepository {
     suspend fun getHeroes() = listOf(
-        Heroe(
+        Hero(
             id = 1,
             name = "Heroe",
-            powerStats = HeroePowerStats(
+            powerStats = HeroPowerStats(
                 intelligence = 0,
                 strength = 1,
                 speed = 2,
@@ -18,18 +18,18 @@ object HeroesRepository {
                 power = 4,
                 combat = 5
             ),
-            biography = HeroeBiography(
+            biography = HeroBiography(
                 fullName = "asd asd asd"
             ),
-            images = HeroeImages(
+            images = HeroImages(
                 sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
                 lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
             )
         ),
-        Heroe(
+        Hero(
             id = 2,
             name = "Heroe 2",
-            powerStats = HeroePowerStats(
+            powerStats = HeroPowerStats(
                 intelligence = 0,
                 strength = 1,
                 speed = 2,
@@ -37,18 +37,18 @@ object HeroesRepository {
                 power = 4,
                 combat = 5
             ),
-            biography = HeroeBiography(
+            biography = HeroBiography(
                 fullName = "hjk hjk ghj jh"
             ),
-            images = HeroeImages(
+            images = HeroImages(
                 sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
                 lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
             )
         ),
-        Heroe(
+        Hero(
             id = 3,
             name = "Heroe 3",
-            powerStats = HeroePowerStats(
+            powerStats = HeroPowerStats(
                 intelligence = 0,
                 strength = 1,
                 speed = 2,
@@ -56,10 +56,10 @@ object HeroesRepository {
                 power = 4,
                 combat = 5
             ),
-            biography = HeroeBiography(
+            biography = HeroBiography(
                 fullName = "fgh yfugf vhf"
             ),
-            images = HeroeImages(
+            images = HeroImages(
                 sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
                 lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
             )

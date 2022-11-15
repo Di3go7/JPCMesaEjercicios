@@ -1,23 +1,23 @@
 package com.example.jpcmesaejercicios.entities
 
-class Heroe(
+class Hero(
     val id: Int,
     val name: String,
-    val powerStats: HeroePowerStats,
-    val biography: HeroeBiography,
-    val images: HeroeImages
+    val powerStats: HeroPowerStats,
+    val biography: HeroBiography,
+    val images: HeroImages
 )
 
-data class HeroeBiography(
+data class HeroBiography(
     val fullName: String
 )
 
-data class HeroeImages(
+data class HeroImages(
     val sm: String,
     val lg: String
 )
 
-data class HeroePowerStats(
+data class HeroPowerStats(
     val intelligence: Int,
     val strength: Int,
     val speed: Int,
