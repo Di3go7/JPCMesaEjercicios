@@ -18,27 +18,27 @@ fun Navigation(navHostController: NavHostController) {
     ) {
         composable("main") {
             HeroesScreen(
-                onHeroClick = { heroeId ->
+                onHeroClick = { heroId ->
                     navToHeroesDetailScreen(
                         navHostController,
-                        heroeId
+                        heroId
                     )
                 }
             )
         }
-        composable(route = "detail/{heroeId}",
-        arguments = listOf(navArgument("heroeId") { type = NavType.IntType })
+        composable(route = "detail/{heroId}",
+        arguments = listOf(navArgument("heroId") { type = NavType.IntType })
         ) { navBackStackEntry ->
-            val heroeId = navBackStackEntry.arguments?.getInt("heroeId")
-            heroeId?.let { heroeIdSafe ->
-                HeroesDetailScreen(heroeIdSafe)
+            val heroId = navBackStackEntry.arguments?.getInt("heroId")
+            heroId?.let { heroIdSafe ->
+                HeroesDetailScreen(heroIdSafe)
             }
         }
     }
 }
 
-fun navToHeroesDetailScreen(navController: NavController, heroeId: Int) {
-    navController.navigate("detail/$heroeId")
+fun navToHeroesDetailScreen(navController: NavController, heroId: Int) {
+    navController.navigate("detail/$heroId")
 }
 
 /*

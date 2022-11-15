@@ -27,7 +27,8 @@ class MainActivity : ComponentActivity() {
 fun DefaultPreview() {
     val navController = rememberNavController()
     Navigation(navHostController = navController)
-    HeroesScreen {
+/*    HeroesScreen {
         // Nothing
-    }
+    }*/
+//    HeroesDetailScreen(1)
 }

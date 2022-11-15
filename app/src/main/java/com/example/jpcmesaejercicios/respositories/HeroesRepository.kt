@@ -9,60 +9,64 @@ object HeroesRepository {
     suspend fun getHeroes() = listOf(
         Hero(
             id = 1,
-            name = "Heroe",
+            name = "A-Bomb",
             powerStats = HeroPowerStats(
-                intelligence = 0,
-                strength = 1,
-                speed = 2,
-                durability = 3,
-                power = 4,
-                combat = 5
+                intelligence = 38,
+                strength = 100,
+                speed = 17,
+                durability = 80,
+                power = 24,
+                combat = 64
             ),
             biography = HeroBiography(
-                fullName = "asd asd asd"
+                fullName = "Richard Milhouse Jones"
             ),
             images = HeroImages(
-                sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
-                lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
+                sm = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/1-a-bomb.jpg",
+                lg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/1-a-bomb.jpg"
             )
         ),
         Hero(
             id = 2,
-            name = "Heroe 2",
+            name = "Abe Sapien",
             powerStats = HeroPowerStats(
-                intelligence = 0,
-                strength = 1,
-                speed = 2,
-                durability = 3,
-                power = 4,
-                combat = 5
+                intelligence = 88,
+                strength = 28,
+                speed = 35,
+                durability = 65,
+                power = 100,
+                combat = 85
             ),
             biography = HeroBiography(
-                fullName = "hjk hjk ghj jh"
+                fullName = "Abraham Sapien"
             ),
             images = HeroImages(
-                sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
-                lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
+                sm = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/2-abe-sapien.jpg",
+                lg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/2-abe-sapien.jpg"
             )
         ),
         Hero(
             id = 3,
-            name = "Heroe 3",
+            name = "Abin Sur",
             powerStats = HeroPowerStats(
-                intelligence = 0,
-                strength = 1,
-                speed = 2,
-                durability = 3,
-                power = 4,
-                combat = 5
+                intelligence = 50,
+                strength = 90,
+                speed = 53,
+                durability = 64,
+                power = 99,
+                combat = 65
             ),
             biography = HeroBiography(
-                fullName = "fgh yfugf vhf"
+                fullName = ""
             ),
             images = HeroImages(
-                sm = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/1-a-bomb.jpg",
-                lg = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg"
+                sm = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/3-abin-sur.jpg",
+                lg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/3-abin-sur.jpg"
             )
         )
     )
+
+    suspend fun getHero(heroId: Int): Hero? {
+        return getHeroes().find { it.id == heroId }
+    }
 }
